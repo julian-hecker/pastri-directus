@@ -41,7 +41,7 @@ force = true
 directory = "functions"
 node_bundler = "esbuild"
 # @directus/api is imported dynamically https://www.netlify.com/blog/2021/08/12/how-to-include-files-in-netlify-serverless-functions/
-external_node_modules = ["@directus/api"]
+# external_node_modules = ["@directus/api"]
 
 [dev]
 framework = "#static"
