@@ -1,0 +1,48 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration
+
+[build]
+publish = "node_modules/@directus/app/dist"
+functions = "functions"
+
+[[redirects]]
+from = "/"
+to = "/"
+status = 200
+force = true
+
+[[redirects]]
+from = "/favicon.ico"
+to = "/favicon.ico"
+status = 200
+force = true
+
+[[redirects]]
+from = "/*/assets/:asset"
+to = "/assets/:asset"
+status = 200
+force = true
+
+[[redirects]]
+from = "/admin/*"
+to = "index.html"
+# to = "/admin/:splat"
+status = 200
+force = true
+
+[[redirects]]
+from = "/*"
+# to = "http://0.0.0.0:8055/:splat"
+to = "/.netlify/functions/api/:splat"
+status = 200
+force = true
+
+# https://docs.netlify.com/configure-builds/file-based-configuration/#functions
+[functions]
+directory = "functions"
+node_bundler = "esbuild"
+# @directus/api is imported dynamically https://www.netlify.com/blog/2021/08/12/how-to-include-files-in-netlify-serverless-functions/
+external_node_modules = ["@directus/api", "@napi-rs/snappy-win32-x64-msvc"]
+
+[dev]
+framework = "#static"
+publish = "node_modules/@directus/app/dist"

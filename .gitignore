@@ -1,0 +1,9 @@
+data.db
+uploads/
+sql/
+
+.env
+node_modules/
+
+# Local Netlify folder
+.netlify

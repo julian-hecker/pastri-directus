@@ -1,0 +1,25 @@
+{
+  "name": "pastri-directus",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "directus start",
+    "build": "netlify build",
+    "dev": "netlify dev",
+    "deploy": "netlify deploy",
+    "deploy:prod": "netlify deploy --prod --trigger",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@directus/api": "^17.0.1",
+    "directus": "^10.8.3",
+    "serverless-http": "^3.2.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.16.4"
+  }
+}
