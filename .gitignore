@@ -2,8 +2,9 @@ data.db
 uploads/
 sql/
 
-.env
+.env*
 node_modules/
+*.log
 
 # Local Netlify folder
 .netlify

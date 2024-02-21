@@ -1,0 +1,28 @@
+diff --git a/node_modules/@directus/api/dist/app.js b/node_modules/@directus/api/dist/app.js
+index 1df9d11..07949f0 100644
+--- a/node_modules/@directus/api/dist/app.js
++++ b/node_modules/@directus/api/dist/app.js
+@@ -160,7 +160,8 @@ export default async function createApp() {
+         res.send(env['ROBOTS_TXT']);
+     });
+     if (env['SERVE_APP']) {
+-        const adminPath = require.resolve('@directus/app');
++        const adminPath = "./";
++        // const adminPath = require.resolve('@directus/app');
+         const adminUrl = new Url(env['PUBLIC_URL']).addPath('admin');
+         const embeds = extensionManager.getEmbeds();
+         // Set the App's base path according to the APIs public URL
+diff --git a/node_modules/@directus/api/dist/extensions/lib/get-shared-deps-mapping.js b/node_modules/@directus/api/dist/extensions/lib/get-shared-deps-mapping.js
+index 10b13cd..797be45 100644
+--- a/node_modules/@directus/api/dist/extensions/lib/get-shared-deps-mapping.js
++++ b/node_modules/@directus/api/dist/extensions/lib/get-shared-deps-mapping.js
+@@ -11,7 +11,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
+ export const getSharedDepsMapping = async (deps) => {
+     const env = useEnv();
+     const logger = useLogger();
+-    const appDir = await readdir(path.join(resolvePackage('@directus/app', __dirname), 'dist', 'assets'));
++    // const appDir = await readdir(path.join(resolvePackage('@directus/app', __dirname), 'dist', 'assets'));
++    const appDir = [];
+     const depsMapping = {};
+     for (const dep of deps) {
+         const depRegex = new RegExp(`${escapeRegExp(dep.replace(/\//g, '_'))}\\.[a-zA-Z0-9_-]{8}\\.entry\\.js`);

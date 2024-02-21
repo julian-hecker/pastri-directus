@@ -3,21 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "postinstall": "patch-package",
+    "start": "directus start",
     "build": "netlify build",
     "dev": "netlify dev",
     "deploy": "netlify deploy",
-    "deploy:prod": "netlify deploy --prod --trigger",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy:prod": "netlify deploy --prod --trigger"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@directus/api": "^17.0.1",
-    "@directus/app": "^10.15.1",
+    "directus": "~10.9.2",
+    "pg": "^8.11.3",
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {
-    "netlify-cli": "^17.16.4"
+    "netlify-cli": "^17.16.4",
+    "patch-package": "^8.0.0"
   }
 }
