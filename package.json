@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "directus start",
     "build": "netlify build",
     "dev": "netlify dev",
     "deploy": "netlify deploy",
@@ -15,9 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "@directus/api": "^17.0.1",
-    "directus": "^10.8.3",
-    "serverless-http": "^3.2.0",
-    "sqlite3": "^5.1.7"
+    "@directus/app": "^10.15.1",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "netlify-cli": "^17.16.4"
